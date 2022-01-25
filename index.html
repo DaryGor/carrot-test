@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <script defer src="./js/inputmask.min.js"></script>
+    <script defer src="./js/forms.js"></script>
+    <script defer src="./js/main.js"></script>
+    <title>Popup</title>
+</head>
+<body>
+    <section class="section">
+        <img src="./img/img.jpg" alt="" srcset="" class="section__img">
+        <button class="section__btn">Я popup, открой меня</button>
+    </section>
+    <div class="modal" id="modal">
+        <div class="modal__body">
+            <div class="modal__content">
+                <a href="" class="modal__close">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1L19 19M19 1L1 19" stroke="#ABABAB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>                        
+                </a>
+                <div class="modal__wrapper">
+                    <h3 class="modal__title">Рады видеть вас вновь! Давайте будем на связи?</h3>
+                    <p class="modal__text">Оставьте телефон - не пропускайте распродажи и раньше всех узнавайте о выходе новых коллекций</p>
+                    <div class="modal__form">
+                        <input type="tel" class="modal__input" placeholder="+7 (___) ___-__-__">
+                        <button type="submit" class="modal__btn">оставаться на связи</button>
+                    </div>
+                </div>
+                <div class="modal__photo">
+                    <img src="./img/image.jpg" alt="" srcset="">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
