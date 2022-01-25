@@ -3,13 +3,14 @@
 }
 
 @font-face {
-    font-family: 'proxima_novaregular',;
-    src: url('/fonts/ofont.ru_proxima_nova-webfont.woff2') format('woff2'),
-         url('/fonts/ofont.ru_proxima_nova-webfont.woff') format('woff');
+    font-family: 'Proxima Nova Rg';
+    src: url('ProximaNova-RegularIt.eot');
+    src: local('Proxima Nova Regular Italic'), local('ProximaNova-RegularIt'),
+        url('/fonts/ProximaNova-Regular.woff2') format('woff2'),
+        url('/fonts/ProximaNova-Regular.woff') format('woff');
     font-weight: normal;
-    font-style: normal;
+    font-style: italic;
 }
-
 
 html {
     font-family: 'Roboto', sans-serif;
@@ -99,6 +100,14 @@ textarea {
     height: 100%;
     background: rgba(30, 30, 30, 0.7);
     backdrop-filter: blur(35px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all .1s ease;
+}
+
+.modal--active {
+    opacity: 1;
+    visibility: visible;
 }
 
 .modal__body {
@@ -177,10 +186,18 @@ textarea {
     width: 100%;
     padding: 20px;
     background: black;
-    font-family: 'proxima_novaregular', sans-serif;
+    font-family: 'Proxima Nova Rg', sans-serif;
     font-weight: normal;
     font-size: 18px;
     line-height: 24px;
     text-transform: uppercase;
     color: #FFFFFF;
+}
+
+.form__input--error {
+    border: 1px solid red;
+}
+
+.form__input--done {
+    border: 1px solid green;
 }

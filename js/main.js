@@ -1,7 +1,7 @@
 // Открытие и закрытие всех модальных окон
 
-// Все кнопки вызова модального окна на странице должны иметь класс .modal__link
-const modalLinks = document.querySelectorAll('.modal__link');
+// Все кнопки вызова модального окна на странице должны иметь класс .modal__get
+const modalLinks = document.querySelectorAll('.modal__get');
 const body = document.querySelector('body');
 const lockPadding = document.querySelectorAll('.lock-padding');
 
@@ -21,6 +21,7 @@ if (modalLinks.length > 0) {
             const curentModal = document.getElementById(modalName);
             // На выбранный объект применяется функция открытия модального окна
             modalOpen(curentModal);
+            console.log('Пользователь открыл попап');
             // Запрет перезагрузки страницы
             e.preventDefault();
         });
@@ -34,6 +35,7 @@ if (modalCloseIcon.length > 0) {
         const el = modalCloseIcon[index];
         el.addEventListener('click', function (e) {
             modalClose(el.closest('.modal'));
+            console.log('Пользователь закрыл попап');
             e.preventDefault();
         })
     }
