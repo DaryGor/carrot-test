@@ -8,39 +8,28 @@ im.mask(selector);
 
 // Валидация формы
 
-function Validation() {
-    const form = document.querySelectorAll('.form')
+function formValidate(form) {
+    let error = 0;
+    const formReq = document.querySelectorAll('.form__input--req');
 
-    form.forEach(e => {
-        const reqInputs = e.querySelectorAll('.form__input--req');
-        reqInputs.forEach(element => {
-            element.addEventListener('change', () => {
-                formValidate(e);
-            })
-        })
-    })
+    for (let i = 0; i < formReq.length; i++) {
+        const input = formReq[i];
+        formRemoveError(input);
 
-    function formValidate(form) {
-        let error = 0;
-        const formReq = form.querySelectorAll('.form__input--req');
-
-        for (let i = 0; i < formReq.length; i++) {
-            const input = formReq[i];
-            formRemoveError(input);
-
-            if (input.getAttribute('type') === 'tel') {
-                if (!validatePhone(input.value.replace(/[^\d]/g, ''))) {
-                    formAddError(input);
-                    error++;
-                }
-            };
-
-            if (error === 0) {
-                formAddDone(input);
+        if (input.getAttribute('type') === 'tel') {
+            if (!validatePhone(input.value.replace(/[^\d]/g, ''))) {
+                formAddError(input);
+                error++;
+            } else {
+                error = 0;
             }
+        };
+
+        if (error === 0) {
+            formAddDone(input);
         }
-        return error;
     }
+    return error;
 }
 
 function formAddError(input) {
@@ -60,5 +49,21 @@ function validatePhone(item) {
     return reg.test(item) && item.length === 11
 }
 
+// Отправка формы
 
-Validation();
+function sandForm() {
+    const form = document.querySelector('.modal__form');
+    let error = formValidate(form);
+
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        if (error === 0) {
+            console.log('Пользователь ответил в попап');
+        } else {
+            console.log('Пользователь некорректно заполнил форму');
+        }
+    });
+}
+
+sandForm();
