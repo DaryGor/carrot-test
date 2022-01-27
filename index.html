@@ -31,14 +31,15 @@
                     <div class="modal__wrapper">
                         <h3 class="modal__title">Рады видеть вас вновь! Давайте будем на связи?</h3>
                         <p class="modal__text">Оставьте телефон - не пропускайте распродажи и раньше всех узнавайте о выходе новых коллекций</p>
-                        <form class="modal__form form">
+                        <form class="modal__form form" id="form">
                             <input type="tel" class="modal__input form__input--req" placeholder="+7 (___) ___-__-__">
                             <button type="submit" class="modal__btn">оставаться на связи</button>
                         </form>
                     </div>
-                    <div class="modal__photo">
-                        <img src="./img/image.jpg" alt="" srcset="">
-                    </div>
+                    <picture class="modal__photo">
+                        <source srcset="./img/image-mbl.jpg" media="(max-width: 1024px)">
+                        <img src="./img/image.jpg" alt="">
+                    </picture>
                 </div>
             </div>
         </div>
